@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     let token = this.service.obterTokenUrlCallback();
     if(!!token) {
       this.service.definirAccessToken(token);
-      this.router.navigate(['/player'])
+      this.router.navigate(['/player/home'])
     }
   }
 

@@ -1,6 +1,8 @@
 import {IUsuario} from '../interface/IUsuario'
 import {IPlaylist} from '../interface/IPlaylist'
 import { IArtistas } from '../interface/IArtistas'
+import { IMusicas } from '../interface/IMusicas'
+// import { addMilliseconds, format } from "date-fns"
 
 export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileResponse): IUsuario {
     return {
@@ -23,5 +25,31 @@ export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileRespo
         id: playlist.id,
         nome: playlist.name,
         imagemUrl: playlist.images?.sort((a, b) => a.width -b.width).pop()?.url
+    }
+ }
+
+ export function SpotifyTrackParaMusica(spotifyTrack: SpotifyApi.TrackObjectFull): IMusicas {
+    
+    const msParaMinutos = (ms: number) => {
+        const segundosTotais = Math.floor(ms / 1000);
+        const minutos = Math.floor(segundosTotais / 60);
+        const segundos = segundosTotais % 60;
+
+        return `${minutos}:${segundos.toString().padStart(2, '0')}`;
+    }
+    
+    return {
+        id: spotifyTrack.uri,
+        titulo: spotifyTrack.name,
+        album: {
+            id: spotifyTrack.album.id,
+            imagem: spotifyTrack.album.images.shift().url,
+            nome: spotifyTrack.album.name
+        },
+        artistas: spotifyTrack.artists.map(artista => ({
+            id: artista.id,
+            nome: artista.name
+        })),
+        tempo: msParaMinutos(spotifyTrack.duration_ms)
     }
  }

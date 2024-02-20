@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { IArtistas } from 'src/app/interface/IArtistas';
-import { newArtista } from 'src/app/common/factories'
+import { newArtista } from 'src/app/Common/factories';
+// import { newArtista } from 'src/app/common/factories'
 
 @Component({
   selector: 'app-top-artistas',

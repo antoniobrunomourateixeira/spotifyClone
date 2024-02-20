@@ -10,6 +10,11 @@ import { BotaoMenuComponent } from '../../components/botao-menu/botao-menu.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RodapeUsuarioComponent } from '../../components/rodape-usuario/rodape-usuario.component';
 import { TopArtistasComponent } from '../../components/top-artistas/top-artistas.component';
+import { BuscasRecentesComponent } from '../../components/buscas-recentes/buscas-recentes.component';
+import { TopArtistasPainelDireitoComponent } from '../../components/top-artistas-painel-direito/top-artistas-painel-direito.component';
+import { ArtistaItemImagemComponent } from '../../components/artista-item-imagem/artista-item-imagem.component';
+import { PlayerCardComponent } from '../../components/player-card/player-card.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -19,11 +24,16 @@ import { TopArtistasComponent } from '../../components/top-artistas/top-artistas
     RodapeUsuarioComponent,
     HomeComponent,
     TopArtistasComponent,
-    PainelDireitoComponent
+    PainelDireitoComponent,
+    BuscasRecentesComponent,
+    TopArtistasPainelDireitoComponent,
+    ArtistaItemImagemComponent,
+    PlayerCardComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
+    FormsModule,
     RouterModule.forChild(PlayerRouts)
   ],
   

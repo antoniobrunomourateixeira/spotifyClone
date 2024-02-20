@@ -4,11 +4,23 @@
     width: 100%;
     text-align: left;
     table-layout: fixed;
-    border-collapse: separate;
+    border-collapse: collapse;
 
     .play {
         color: $cor-primaria;
         font-size: 0.5rem;
+    }
+
+    .executando {
+        background-color: $branco;
+        padding: 10px;
+        box-shadow: 0px 0px 10px $preto-transparente-30;
+        border-radius: 5px;
+
+        td {
+            color: $cor-primaria!important;
+            font-weight: 700!important;
+        }
     }
 
     thead th {

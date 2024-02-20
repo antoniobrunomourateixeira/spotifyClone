@@ -1,8 +1,21 @@
 @import 'table';
+@import 'variaveis';
 
 :host {
     display: flex;
     justify-content: space-between;
+
+    ::-webkit-scrollbar {
+        width: 7px;
+
+        &-thumb {
+            background-color: rgba($cor-primaria, .3);
+        }
+
+        &-track {
+            background-color: transparent;
+        }
+    }
 
     .minhas-musicas {
         padding: 0px 50px;
@@ -17,6 +30,6 @@
     }
 
     .painel-direito {
-        height: 100%;
+        height: 100vh;
     }
 }

@@ -1,3 +1,11 @@
-<p>
-    {{musica.titulo}}
-</p>
+<div class="container card p-10">
+    <div class="imagem" [style.background-image]="'url('+ musica.album.imagem +')'"></div>
+
+    <div class="controles">
+        <span> {{musica.titulo}} </span>
+        <div class="botoes">
+            <fa-icon [icon]="anteriorIcone" (click)="voltarMusica()"></fa-icon>
+            <fa-icon [icon]="proximoIcone" (click)="proximaMusica()"></fa-icon>
+        </div>
+    </div>
+</div>

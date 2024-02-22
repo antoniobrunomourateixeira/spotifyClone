@@ -94,6 +94,14 @@ export class SpotifyService {
     return SpotifyTrackParaMusica(musica.item);
   }
 
+  async voltar() {
+    await this.spotifyApi.skipToPrevious();
+  }
+
+  async proxima() {
+    await this.spotifyApi.skipToNext();
+  }
+
   logout() {
     localStorage.clear();
     this.router.navigate(['/login']);

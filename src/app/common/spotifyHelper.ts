@@ -2,7 +2,7 @@ import {IUsuario} from '../interface/IUsuario'
 import {IPlaylist} from '../interface/IPlaylist'
 import { IArtistas } from '../interface/IArtistas'
 import { IMusicas } from '../interface/IMusicas'
-import { newMusica } from './factories'
+import { newMusica, newPlaylist } from './factories'
 // import { addMilliseconds, format } from "date-fns"
 
 export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileResponse): IUsuario {
@@ -18,6 +18,18 @@ export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileRespo
         id: playlist.id,
         nome: playlist.name,
         imagemUrl: playlist.images?.pop()?.url
+    }
+ }
+
+ export function SpotifySinglePlaylistParaPlaylist(playlist: SpotifyApi.SinglePlaylistResponse): IPlaylist {
+    if(!playlist)
+        return newPlaylist();
+
+    return {
+        id: playlist.id,
+        nome: playlist.name,
+        imagemUrl: playlist.images.shift().url,
+        musicas: []
     }
  }
 

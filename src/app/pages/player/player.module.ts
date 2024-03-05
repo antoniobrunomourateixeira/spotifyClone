@@ -14,7 +14,9 @@ import { BuscasRecentesComponent } from '../../components/buscas-recentes/buscas
 import { TopArtistasPainelDireitoComponent } from '../../components/top-artistas-painel-direito/top-artistas-painel-direito.component';
 import { ArtistaItemImagemComponent } from '../../components/artista-item-imagem/artista-item-imagem.component';
 import { PlayerCardComponent } from '../../components/player-card/player-card.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ListaMusicasComponent } from '../../pages/lista-musicas/lista-musicas.component';
+import { BannerComponent } from '../../components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms'
     BuscasRecentesComponent,
     TopArtistasPainelDireitoComponent,
     ArtistaItemImagemComponent,
-    PlayerCardComponent
+    PlayerCardComponent,
+    ListaMusicasComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,

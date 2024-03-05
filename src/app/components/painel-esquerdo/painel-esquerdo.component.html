@@ -39,7 +39,7 @@
                 *ngFor="let item of playlists"
                 [descricao]="item.nome" 
                 [selecionado]="menuSelecionado == item.id" 
-                (click)="btnClick(item.id)"
+                (click)="irParaPlaylist(item.id)"
             >
                 <fa-icon [icon]="playListIcone"></fa-icon>
             </app-botao-menu>

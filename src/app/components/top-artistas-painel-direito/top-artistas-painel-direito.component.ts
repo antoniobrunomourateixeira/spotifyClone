@@ -20,7 +20,6 @@ export class TopArtistasPainelDireitoComponent implements OnInit {
 
   async buscarTopArtistas() {
     this.artistas = await this.service.buscarTopArtistas(5);
-    console.log("top 5", this.artistas)
   }
 
 }
